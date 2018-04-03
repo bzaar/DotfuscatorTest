@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40</TargetFrameworks>
+  </PropertyGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="cd $(TargetDir)&#xD;&#xA;&quot;C:\Program Files (x86)\Microsoft Visual Studio 14.0\PreEmptive Solutions\Dotfuscator and Analytics Community Edition\dotfuscatorCLI.exe&quot; /in:$(TargetFileName) /out:. /mapout:map.xml /clobbermap:on" />
+  </Target>
+
+</Project>
